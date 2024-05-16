@@ -1,0 +1,164 @@
+.s-wrapper{
+    background: url(../../../public/login-image.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+    /* background-position: center; */
+    margin-top: 0;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    color: white;
+    margin-bottom: 3rem;
+}
+
+
+.s-container{
+    background:transparent;
+    width: 420px;
+    margin: auto;
+    padding: 2rem 0;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(40px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+}
+
+h1{
+    font-size: 2.5rem;
+    text-align: center;
+    padding: 0;
+}
+
+.s-container .input-box{
+    position: relative;
+    width: 100%;
+    height: 3rem;
+    margin: 1.5rem 0;
+    color: #fff;
+}
+
+.input-box>input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 1rem;
+    color: white;
+    padding: 20px 45px 20px 20px;
+}
+
+.s-container ::placeholder{
+    color: rgb(47, 8, 8);
+  }
+
+.input-box .s-icon{
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+}
+
+.s-container .checkbox-forget{
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    margin: -15px 0 15px;
+
+}
+
+.checkbox-forget label input{
+    accent-color: #fff;
+    margin-right: 4px;
+}
+
+.s-button{
+    width: 100%;
+    height: 2.5rem;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.3rem;
+    transition: all 300ms ease-in;
+}
+
+.s-button:hover{
+    transform: scale(1.1 );
+}
+
+.login{
+    margin-top: 4rem;
+}
+
+.login a{
+    text-decoration: underline;
+}
+
+
+@media (max-width: 770px) {
+    .s-container {
+      width: 340px;
+    }
+  
+    .s-container h1 {
+      font-size: 1.8rem;
+    }
+    .s-container .input-box {
+      height: 2.8rem;
+    }
+    .s-button {
+      height: 2.3rem;
+      font-size: 1.2rem;
+    }
+    .s-container .input-box .s-icon {
+      font-size: 0.8rem;
+    }
+    .login {
+      margin-top: 3.7rem;
+    }
+  }
+  
+  @media (max-width: 380px) {
+    .s-container {
+      width: 270px;
+    }
+  
+    .s-container h1 {
+      font-size: 1.5rem;
+    }
+    .s-container .input-box {
+      height: 2.8rem;
+      margin: 1.5rem;
+    }
+  
+    .s-container .input-box > input {
+      height: 70%;
+      width: 80%;
+      font-size: 0.8rem;
+    }
+    .s-container .checkbox-forget {
+      font-size: 0.6rem;
+      margin: 15px ;
+    }
+  
+    .s-button {
+      height: 2.2rem;
+      font-size: 1.1rem;
+      margin: 1rem 1.5rem;
+      width: 80%;
+    }
+    .s-container .input-box .s-icon {
+      font-size: 0.8rem;
+      right: 5rem;
+    }
+    .login {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.7rem;
+    }
+  }

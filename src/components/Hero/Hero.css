@@ -1,0 +1,166 @@
+.hero-wrapper {
+  color: white;
+  position: relative;
+  padding-bottom: 2rem;
+  background-image: url("https://cdn.photos.sparkplatform.com/gps/20240418184958245597000000-o.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  margin-top: 0;
+  z-index: -1;
+}
+
+.hero-desc{
+  line-height: 0.3rem;
+}
+
+.hero-container {
+  display: flex;
+}
+
+.image-container {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  display: block;
+  object-fit: contain;
+  /* border-radius: 18rem ;
+    border: 8px solid rgba(255, 255, 255, 0.12); */
+}
+
+.yellow-circle {
+  height: 4rem;
+  width: 4rem;
+  background: var(--yellow-circle);
+  border-radius: 100%;
+  position: absolute;
+  right: 28%;
+  top: -10%;
+  z-index: -1;
+}
+
+.search-bar {
+  background-color: white;
+  border-radius: 5px;
+  border: 3px solid rgba(120, 120, 120, 0.374);
+  padding: 0.5rem 0.5rem;
+  justify-content: space-between;
+  width: 20rem;
+  /* gap:0rem; */
+}
+
+.search-bar > input {
+  border: none;
+  outline: none;
+  width: 30%;
+  /* background-color: black; */
+
+}
+
+.search-bar .button{
+    margin-left: 0;
+    /* padding-left: 0; */
+}
+
+.stats {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.stat > :nth-child(1) {
+  font-size: 2rem;
+}
+
+.stat > :nth-child(1) > :last-child {
+  color: var(--yellow-circle);
+}
+
+.hero-left {
+  gap: 3rem;
+}
+
+.hero-title {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title > h1 {
+  font-weight: 600;
+  font-size: 3.8rem;
+  line-height: 4rem;
+}
+
+.image-container > img {
+  width: 100%;
+  height: 100%;
+}
+
+
+@media (max-width:1100px){
+  .hero-wrapper {
+    width: 100%;
+    height: 38rem;
+  }
+  .hero-title > h1 {
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+  .hero-desc .hero-text{
+    font-size: 1rem;
+    line-height: 1rem;
+  }
+  .stats .hero-stat{
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-container {
+    margin-top: 0rem;
+  }
+  .hero-title > h1 {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+  .hero-desc .hero-text {
+    font-size: 0.7rem;
+    width: 100%;
+    padding: 0.1rem ;
+  }
+  .hero-desc {
+    margin-top: 0rem;
+  }
+
+  .search-bar{
+    width: 100%;
+  }
+  
+  .hero-wrapper {
+    width: 100%;
+    height: 30rem;
+  }
+
+  .stats {
+    justify-content: center;
+    gap: 1rem;
+  }
+  .stats .hero-stat{
+    font-size: 0.5rem;
+  }
+}
+
+@media (max-width:340px) {
+  .hero-wrapper {
+    width: 100%;
+    height: 39rem;
+  }
+  .stats {
+    justify-content: center;
+    gap: 1rem;
+  }
+  .stats .hero-stat{
+    font-size: 0.4rem;
+  }
+}

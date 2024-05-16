@@ -1,0 +1,14 @@
+.cp-container{
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.cp-container>img{
+    width: 16rem;
+}
+
+@media (max-width:1100px) {
+    .cp-container>img{
+        width: 12rem;
+    }
+}
