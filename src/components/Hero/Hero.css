@@ -26,8 +26,6 @@
   overflow: hidden;
   display: block;
   object-fit: contain;
-  /* border-radius: 18rem ;
-    border: 8px solid rgba(255, 255, 255, 0.12); */
 }
 
 .yellow-circle {
@@ -41,28 +39,21 @@
   z-index: -1;
 }
 
-.search-bar {
-  background-color: white;
-  border-radius: 5px;
-  border: 3px solid rgba(120, 120, 120, 0.374);
-  padding: 0.5rem 0.5rem;
-  justify-content: space-between;
-  width: 20rem;
-  /* gap:0rem; */
-}
-
-.search-bar > input {
+.ex-button{
+  font-weight: 500;
+  padding: 0.6rem 1.4rem;
+  color: white;
+  background: var( --blue-gradient);
   border: none;
-  outline: none;
-  width: 30%;
-  /* background-color: black; */
-
+  border-radius: 4px;
+  transition: all 300ms ease-in;
 }
 
-.search-bar .button{
-    margin-left: 0;
-    /* padding-left: 0; */
+.ex-button:hover{
+  cursor: pointer;
+  transform: scale(1.1 );
 }
+
 
 .stats {
   width: 100%;
@@ -131,10 +122,6 @@
   }
   .hero-desc {
     margin-top: 0rem;
-  }
-
-  .search-bar{
-    width: 100%;
   }
   
   .hero-wrapper {
