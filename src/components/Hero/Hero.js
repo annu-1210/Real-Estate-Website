@@ -2,6 +2,7 @@ import React from "react";
 import "./Hero.css";
 import CountUp from "react-countup";
 import { motion } from "framer-motion";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 function Hero() {
   return (
@@ -38,8 +39,9 @@ function Hero() {
               Forget all difficulties in finding a residence for yourself
             </motion.span>
           </div>
-
-            <button className="ex-button">Explore The Luxury</button>
+          <button className="ex-button">
+              <AnchorLink href="#residencies">Explore The Luxury</AnchorLink>
+            </button>
         
           <div className="flexCenter stats">
             <div className="flexColCenter stat">
