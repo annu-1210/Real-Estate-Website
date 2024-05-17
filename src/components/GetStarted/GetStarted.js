@@ -23,7 +23,7 @@ function GetStarted() {
               fugiat.
             </span>
 
-            <button className="button" data-aos='zoom-in'>
+            <button className="get-button" data-aos='zoom-in'>
               <a href="mailto:annupoonia086@gmail.com">Get Started </a>
             </button>
           </div>
