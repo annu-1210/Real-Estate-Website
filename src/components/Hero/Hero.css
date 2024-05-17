@@ -96,10 +96,10 @@
     width: 100%;
     height: 38rem;
   }
-  /* .hero-title > h1 {
+  .hero-title > h1 {
     font-size: 3rem;
     line-height: 4rem;
-  } */
+  }
   .hero-desc .hero-text{
     font-size: 1rem;
     line-height: 1rem;
@@ -111,9 +111,9 @@
     width: 20%;
     padding: 0;
   }
-  /* .stats .hero-stat{
+  .stats .hero-stat{
     font-size: 0.8rem;
-  } */
+  }
 }
 
 @media (max-width: 640px) {
@@ -162,6 +162,5 @@
 
   .hero-button{
     font-size: 0.2rem;
-    background-color: blueviolet;
   }
 }
