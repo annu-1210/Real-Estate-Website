@@ -4,6 +4,7 @@ import "./Header.css";
 import { BiMenuAltRight } from "react-icons/bi";
 import OutsideClickHandler from "react-outside-click-handler";
 import { Link } from "react-router-dom";
+import { CgCloseR } from "react-icons/cg";
 
 function Header() {
   const [menuOpened, setMenuOpened] = useState(false);
@@ -39,6 +40,8 @@ function Header() {
           onClick={() => setMenuOpened((prev) => !prev)}
         >
           <BiMenuAltRight size={30} />
+          <CgCloseR />
+
         </div>
       </div>
     </section>

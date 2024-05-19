@@ -16,7 +16,7 @@ function Hero() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 2, type: "ease-in" }}
             >
-              Discover <br />
+              Discover The<br />
               Most Suitable <br />
               Property
             </motion.h1>

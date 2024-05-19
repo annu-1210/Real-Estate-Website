@@ -7,63 +7,76 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import AOS from "aos";
-import 'aos/dist/aos.css'
+import "aos/dist/aos.css";
 
 function SIgnUp() {
-  const [id, setId] = useState("");
-  const [Name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [input, setInput] = useState({
+    username: "",
+    name: "",
+    email: "",
+    password: "",
+  });
+  // const [Name, setName] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let obj = { id, Name, email, password };
-    // console.log(obj);
+    localStorage.setItem("user", JSON.stringify(input));
+    navigate("/login");
 
-    fetch("http://localhost:8000/user", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(obj),
-    })
-      .then((res) => {
-        // res.json();
-        JSON.stringify(res)
-        console.log(res.data);
-        toast.success("Registered Successfully!");
-        navigate("/login");
-       localStorage.setItem("user", res);
-      })
-      .catch((err) => {
-        toast.err("Failed:" + err.message);
-      });
+    //   let obj = { id, Name, email, password };
+    //   // console.log(obj);
+
+    //   fetch("http://localhost:8000/user", {
+    //     method: "POST",
+    //     headers: {
+    //       "content-type": "application/json",
+    //     },
+    //     body: JSON.stringify(obj),
+    //   })
+    //     .then((res) => {
+    //       // res.json();
+    //       JSON.stringify(res)
+    //       console.log(res.data);
+    //       toast.success("Registered Successfully!");
+    //       navigate("/login");
+    //      localStorage.setItem("user", res);
+    //     })
+    //     .catch((err) => {
+    //       toast.err("Failed:" + err.message);
+    //     });
   };
-  useEffect(()=>{
-    AOS.init({duration: 2000})
-  },[])
-
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
 
   return (
     <section className="s-wrapper">
-      <div className="flexCenter innerWidth s-container"  data-aos='flip-right'>
+      <div className="flexCenter innerWidth s-container" data-aos="flip-right">
         <form onSubmit={handleSubmit}>
           <h1>SignUp</h1>
           <div className="input-box">
             <input
-              value={id}
-              onChange={(e) => setId(e.target.value)}
+              name="username"
+              value={input.username}
+              onChange={(e) =>
+                setInput({ ...input, [e.target.username]: e.target.value })
+              }
               type="text"
-              placeholder="user-name"
+              placeholder="username"
               required
             />
             <FaUser className="s-icon" />
           </div>
           <div className="input-box">
             <input
-              value={Name}
-              onChange={(e) => setName(e.target.value)}
+              name="name"
+              value={input.name}
+              onChange={(e) =>
+                setInput({ ...input, [e.target.name]: e.target.value })
+              }
               type="text"
               placeholder="enter name"
               required
@@ -72,8 +85,11 @@ function SIgnUp() {
           </div>
           <div className="input-box">
             <input
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              name="email"
+              value={input.email}
+              onChange={(e) =>
+                setInput({ ...input, [e.target.email]: e.target.value })
+              }
               type="email"
               placeholder="enter email"
               required
@@ -83,8 +99,11 @@ function SIgnUp() {
 
           <div className="input-box">
             <input
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              name="password"
+              value={input.password}
+              onChange={(e) =>
+                setInput({ ...input, [e.target.password]: e.target.value })
+              }
               type="password"
               placeholder="create password"
               required
