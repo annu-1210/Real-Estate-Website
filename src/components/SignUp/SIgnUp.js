@@ -16,37 +16,13 @@ function SIgnUp() {
     email: "",
     password: "",
   });
-  // const [Name, setName] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     localStorage.setItem("user", JSON.stringify(input));
+    toast.success("Registered Successfully!");
     navigate("/login");
-
-    //   let obj = { id, Name, email, password };
-    //   // console.log(obj);
-
-    //   fetch("http://localhost:8000/user", {
-    //     method: "POST",
-    //     headers: {
-    //       "content-type": "application/json",
-    //     },
-    //     body: JSON.stringify(obj),
-    //   })
-    //     .then((res) => {
-    //       // res.json();
-    //       JSON.stringify(res)
-    //       console.log(res.data);
-    //       toast.success("Registered Successfully!");
-    //       navigate("/login");
-    //      localStorage.setItem("user", res);
-    //     })
-    //     .catch((err) => {
-    //       toast.err("Failed:" + err.message);
-    //     });
   };
   useEffect(() => {
     AOS.init({ duration: 2000 });
@@ -62,11 +38,10 @@ function SIgnUp() {
               name="username"
               value={input.username}
               onChange={(e) =>
-                setInput({ ...input, [e.target.username]: e.target.value })
+                setInput({ ...input, [e.target.name]: e.target.value })
               }
               type="text"
               placeholder="username"
-              required
             />
             <FaUser className="s-icon" />
           </div>
@@ -79,7 +54,6 @@ function SIgnUp() {
               }
               type="text"
               placeholder="enter name"
-              required
             />
             <FaUser className="s-icon" />
           </div>
@@ -88,11 +62,10 @@ function SIgnUp() {
               name="email"
               value={input.email}
               onChange={(e) =>
-                setInput({ ...input, [e.target.email]: e.target.value })
+                setInput({ ...input, [e.target.name]: e.target.value })
               }
               type="email"
               placeholder="enter email"
-              required
             />
             <MdEmail className="s-icon" />
           </div>
@@ -102,11 +75,10 @@ function SIgnUp() {
               name="password"
               value={input.password}
               onChange={(e) =>
-                setInput({ ...input, [e.target.password]: e.target.value })
+                setInput({ ...input, [e.target.name]: e.target.value })
               }
               type="password"
               placeholder="create password"
-              required
             />
             <FaLock className="s-icon" />
           </div>

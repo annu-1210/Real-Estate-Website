@@ -1,4 +1,4 @@
-import React,  { useEffect } from "react";
+import React, { useEffect } from "react";
 import "./Login.css";
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
@@ -7,76 +7,60 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import AOS from "aos";
-import 'aos/dist/aos.css'
+import "aos/dist/aos.css";
 
 function Login() {
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
+  const [input, setInput] = useState({
+    email: "",
+    password: "",
+  });
 
   const usenavigate = useNavigate();
 
   const loginProceed = (e) => {
     e.preventDefault();
-    if (validate()) {
-      fetch("http://localhost:8000/user/" + userName)
-        .then((res) => {
-          return res.json();
-        })
-        .then((resp) => {
-          // console.log(resp);
-          if (Object.keys(resp).length === 0) {
-            toast.error("Please Enter Valid UserName.");
-          } else {
-            if (resp.password === password) {
-              toast.success('Logedin Successfully!');
-              usenavigate("/");
-            } else {
-              toast.error("Please Enter Valid Credentials");
-            }
-          }
-        })
-        .catch((err) => {
-          toast.error("Login is Failed due to :" + err.message);
-        });
+
+    const loggedUser = JSON.parse(localStorage.getItem("user"));
+    if (
+      input.email === loggedUser.email &&
+      input.password === loggedUser.password
+    ) {
+      toast.success("LogedIn Successfully!");
+      localStorage.setItem("loggedin", true);
+      usenavigate("/");
+    } else {
+      toast.error("Please Enter Valid Credentials");
     }
-    console.log("proceeding");
   };
 
-  const validate = () => {
-    let result = true;
-    if (userName === "" || userName === null) {
-      result = false;
-      toast.warning("Please Enter Username");
-    }
-    if (password === "" || password === null) {
-      result = false;
-      toast.warning("Please Enter Password");
-    }
-    return result;
-  };
-
-  useEffect(()=>{
-    AOS.init({duration: 2000})
-  },[])
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
 
   return (
-    <section className="l-wrapper" >
-      <div className="flexCenter innerWidth l-container" data-aos='zoom-in'>
+    <section className="l-wrapper">
+      <div className="flexCenter innerWidth l-container" data-aos="zoom-in">
         <form onSubmit={loginProceed}>
           <h1>LogIn</h1>
           <div className="input-box">
             <input
-              value={userName}
-              onChange={(e) => setUserName(e.target.value)}
-              type="text"
-              placeholder="username"
+              name="email"
+              value={input.email}
+              onChange={(e) =>
+                setInput({ ...input, [e.target.name]: e.target.value })
+              }
+              type="email"
+              placeholder="enter email"
             />
             <FaUser className="l-icon" />
           </div>
           <div className="input-box">
             <input
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              name="password"
+              value={input.password}
+              onChange={(e) =>
+                setInput({ ...input, [e.target.name]: e.target.value })
+              }
               type="password"
               placeholder="password"
             />
