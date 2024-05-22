@@ -2,13 +2,14 @@
   color: white;
   position: relative;
   padding-bottom: 2rem;
-  background-image: url("https://cdn.photos.sparkplatform.com/gps/20240418184958245597000000-o.jpg");
+  background-image: url('https://cdn.homedit.com/wp-content/uploads/2019/05/Black-Mansion.jpeg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  backdrop-filter: blur(40px);
   width: 100%;
   height: 100vh;
-  margin-top: 0;
+  margin-top: 0rem;
   z-index: -1;
 }
 
@@ -106,7 +107,6 @@
   }
   .hero-wrapper>button{
     font-size: 0.2rem;
-    background-color: blueviolet;
     color: white;
     width: 20%;
     padding: 0;

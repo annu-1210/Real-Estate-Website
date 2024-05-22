@@ -3,6 +3,7 @@ import "./SIgnUp.css";
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { IoEyeOutline } from "react-icons/io5";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
@@ -16,52 +17,61 @@ function SIgnUp() {
     email: "",
     password: "",
   });
+  const [visible, setVisible] = useState(false);
   const navigate = useNavigate();
 
   const validation = () => {
     let isProceed = true;
-    let errorMessage = 'Please Enter Valid '
+    let errorMessage = "Please Enter Valid ";
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     if (!input.username) {
       isProceed = false;
-      errorMessage += ' Username'
+      errorMessage += " Username";
     }
     if (!input.name) {
       isProceed = false;
-      errorMessage += ' name'
+      errorMessage += " name";
     }
     if (!input.email) {
       isProceed = false;
-      errorMessage += ' email'
+      errorMessage += " email";
     }
     if (!input.password) {
       isProceed = false;
-      errorMessage += ' password'
+      errorMessage += " password";
     } else if (input.password.length < 6) {
+      isProceed = false;
       toast.error("Password must be more than 6 characters");
-    }else if(input.password.length > 10){
+    } else if (input.password.length > 10) {
+      isProceed = false;
       toast.error("Password must be less than 10 characters");
     }
 
-    if(!isProceed){
+    if (!isProceed) {
       toast.error(errorMessage);
     } else {
       if (!regex.test(input.email)) {
+        isProceed = false;
         toast.error("Please Enter Valid email type");
+      }
     }
-  }
-  return isProceed;
+    return isProceed;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // const a = validation();
+    // console.log(a);
     if (validation()) {
       localStorage.setItem("user", JSON.stringify(input));
+      // if (isProceed === true) {
+      //   toast.success("Registered Successfully!");
+      //   navigate("/login");
+      // }
 
       toast.success("Registered Successfully!");
       navigate("/login");
-    }
-    else {
+    } else {
       toast.error("Please Enter Valid Credentials");
     }
   };
@@ -118,10 +128,17 @@ function SIgnUp() {
               onChange={(e) =>
                 setInput({ ...input, [e.target.name]: e.target.value })
               }
-              type="password"
+              type={visible ? "text" : "password"}
               placeholder="create password"
             />
-            <FaLock className="s-icon" />
+            {visible ? (
+              <IoEyeOutline
+                className="s-icon"
+                onClick={() => setVisible(!visible)}
+              />
+            ) : (
+              <FaLock className="s-icon" onClick={() => setVisible(!visible)} />
+            )}
           </div>
           <div className="checkbox-forget">
             <label htmlFor="checkbox">

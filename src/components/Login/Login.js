@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./Login.css";
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
+import { IoEyeOutline } from "react-icons/io5";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -15,20 +16,26 @@ function Login() {
     password: "",
   });
 
+  const [visible, setVisible] = useState(false);
+
   const usenavigate = useNavigate();
 
   const loginProceed = (e) => {
     e.preventDefault();
 
     const loggedUser = JSON.parse(localStorage.getItem("user"));
-    if (
-      input.email === loggedUser.email &&
-      input.password === loggedUser.password
-    ) {
-      toast.success("LogedIn Successfully!");
-      localStorage.setItem("loggedin", true);
-      usenavigate("/");
-    } else {
+    try {
+      if (loggedUser.email === null) {
+        toast.error("Please Enter Valid Credentials");
+      } else if (
+        input.email === loggedUser.email &&
+        input.password === loggedUser.password
+      ) {
+        toast.success("LogedIn Successfully!");
+        localStorage.setItem("loggedin", true);
+        usenavigate("/");
+      }
+    } catch (error) {
       toast.error("Please Enter Valid Credentials");
     }
   };
@@ -61,10 +68,17 @@ function Login() {
               onChange={(e) =>
                 setInput({ ...input, [e.target.name]: e.target.value })
               }
-              type="password"
+              type={visible ? "text" : "password"}
               placeholder="password"
             />
-            <FaLock className="l-icon" />
+            {visible ? (
+              <IoEyeOutline
+                className="l-icon"
+                onClick={() => setVisible(!visible)}
+              />
+            ) : (
+              <FaLock className="l-icon" onClick={() => setVisible(!visible)} />
+            )}
           </div>
           <div className="checkbox-forget">
             <label htmlFor="checkbox">

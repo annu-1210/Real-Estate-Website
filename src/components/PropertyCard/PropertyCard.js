@@ -4,7 +4,7 @@ import "./PropertyCard.css";
 function PropertyCard({ card }) {
   return (
     <div className="flexColStart r-card">
-      <img src={card.image} alt="home" />
+      <img src={card.image} alt="home" className="r-images" />
       <span className="r-price">
         <span>$</span>
         <span>{card.price}</span>

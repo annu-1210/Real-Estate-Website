@@ -1,33 +1,57 @@
 .h-wrapper {
-  background-color: rgb(255, 255, 255);
   color: black;
   z-index: 99;
   position: sticky;
   top: 0;
   height: 3.5rem;
+  background: transparent;
+  backdrop-filter: blur(40px);
 }
 
 .h-container {
+  background-color: #dbcbd8;
+  background-image: linear-gradient(316deg, #dbcbd8 0%, #2e4057 74%);
   justify-content: space-between;
   padding-top: 0rem;
   padding-bottom: 0rem;
   color: var(--secondary);
 }
 
-.h-container > img {
-  margin: 0;
-  padding: 0;
+.logo-wrapper {
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+
+.logo-wrapper > img {
+  border: none;
+  border-radius: 10px;
 }
 
 .h-menu {
   gap: 2rem;
 }
 
+a:active{
+  text-decoration: underline;
+}
+
+.h-menu > a {
+  padding: 0.6rem 0.7rem;
+}
+
+.h-menu > a:hover {
+  color: white;
+  background: var(--blue-button);
+  padding: 0.6rem 0.7rem;
+  border: none;
+  border-radius: 4px;
+}
+
 .menu-icon {
   display: none;
 }
 
-@media (max-width: 770px) {
+@media (max-width: 950px) {
   .menu-icon {
     display: inline-block;
     position: absolute;
@@ -49,7 +73,7 @@
     z-index: 99;
     position: absolute;
     top: 3rem;
-    right: 4rem;
+    right: 0.1rem;
     display: flex;
     flex-direction: column;
     font-weight: 500;

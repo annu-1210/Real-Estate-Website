@@ -1,9 +1,9 @@
 .s-wrapper{
-    background: url(../../../public/login-image.jpg);
+    background: url(../../../public/auth-bg.jpg);
     background-repeat: no-repeat;
     width: 100%;
     background-size: cover;
-    /* background-position: center; */
+    background-position: center;
     margin-top: 0;
     padding-top: 6rem;
     padding-bottom: 6rem;
