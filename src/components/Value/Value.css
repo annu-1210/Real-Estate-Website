@@ -1,83 +1,133 @@
-.v-wrapper{
-    display: flex;
-    justify-content: space-evenly;
+.v-wrapper {
+  display: flex;
+  justify-content: space-evenly;
 }
 
-
-.v-container .image-container{
-    border: 8px solid rgb(232  232  232 / 93% ) ;
-
+.v-container .image-container {
+  border: 8px solid rgb(232 232 232 / 93%);
 }
 
-.v-container>div{
-    flex: 1;
-
+.v-container > div {
+  flex: 1;
 }
 
-.v-right{
-    padding-left: 3rem;
-    gap: 0.5rem;
+.v-right {
+  padding-left: 3rem;
+  gap: 0.5rem;
 }
 
-.v-left{
-    padding-right: 3rem;
-    
+.v-left {
+  padding-right: 3rem;
 }
 
-
-.accordion{
-    margin-top: 2rem;
-    border: none;
-
+.accordion {
+  margin-top: 2rem;
+  border: none;
 }
 
-.accordion-item{
-    background: white;
-    border: 0.8px solid rgba(128, 128, 128, 0.143);
-    border-radius: 8px;
-    overflow: hidden;
-    margin-bottom: 20px;
+.accordion-item {
+  background: white;
+  border: 0.8px solid rgba(128, 128, 128, 0.143);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
 }
 
-.accordionButton{
-    background: white;
-    padding: 1rem;
-    width: 100%;
-    justify-content: space-between;
-    cursor: pointer;
+.accordionButton {
+  background: white;
+  padding: 1rem;
+  width: 100%;
+  justify-content: space-between;
+  cursor: pointer;
 }
 
-.icon{
-    padding: 10px;
-    background-color: #eeeeff;
-    border-radius: 5px;
+.icon {
+  padding: 10px;
+  background-color: #eeeeff;
+  border-radius: 5px;
 }
 
-.icon svg{
+.icon svg {
   fill: #1f3e72;
 }
 
-.accordionButton .primaryText{
-    font-size: 1.1rem;
+.accordionButton .primaryText {
+  font-size: 1.1rem;
 }
 
-@media (max-width: 1024px){
-  .v-container{
+.accordion-parah {
+  color: black;
+}
+
+@media (max-width: 1024px) {
+  .v-container {
     flex-direction: column;
-    
   }
 
-  .v-left{
+  .v-left {
     padding-right: 0rem;
   }
 
-  .v-right{
+  .v-right {
     padding-left: 0rem;
   }
+}
 
-  @media(max-width: 768px){
-    .accordionButton .primaryText{
-font-size: 0.8rem;
-    }
+@media (max-width: 768px) {
+  .accordionButton .primaryText {
+    font-size: 0.8rem;
   }
 }
+
+@media (max-width: 400px) {
+  .accordionButton .primaryText {
+    font-size: 0.7rem;
+  }
+  .accordion-parah {
+    font-size: 0.6rem;
+  }
+  .icon{
+    width: 35px;
+    height: 30px;
+    padding-top: 0.3rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .accordionButton .primaryText {
+    font-size: 0.6rem;
+  }
+  .accordion-parah {
+    font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 315px) {
+  .accordionButton .primaryText {
+    font-size: 0.5rem;
+  }
+  .accordion-parah {
+    font-size: 0.5rem;
+  }
+  .icon{
+    width: 30px;
+    height: 25px;
+    padding-top: 0.2rem;
+  }
+}
+
+@media (max-width: 271px) {
+  .accordionButton .primaryText {
+    font-size: 0.4rem;
+  }
+  .accordion-parah {
+    font-size: 0.5rem;
+  }
+  .icon{
+    width: 29px;
+    height: 22px;
+    padding-top: 0.1rem;
+  }
+}
+
+
