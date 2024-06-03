@@ -60,14 +60,8 @@ function SIgnUp() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // const a = validation();
-    // console.log(a);
     if (validation()) {
       localStorage.setItem("user", JSON.stringify(input));
-      // if (isProceed === true) {
-      //   toast.success("Registered Successfully!");
-      //   navigate("/login");
-      // }
 
       toast.success("Registered Successfully!");
       navigate("/login");
