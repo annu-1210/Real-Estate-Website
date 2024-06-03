@@ -43,7 +43,7 @@ function Value() {
           <Accordion
             className="accordion"
             allowMultipleExpanded={false}
-            preExpanded={[0]}
+            // preExpanded={[0]}
           >
             {data.map((item, i) => {
               return (

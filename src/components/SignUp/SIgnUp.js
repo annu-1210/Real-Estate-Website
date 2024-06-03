@@ -11,16 +11,19 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 function SIgnUp() {
+  
   const [input, setInput] = useState({
     username: "",
     name: "",
     email: "",
     password: "",
   });
+
   const [visible, setVisible] = useState(false);
   const navigate = useNavigate();
 
   const validation = () => {
+
     let isProceed = true;
     let errorMessage = "Please Enter Valid ";
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
@@ -69,6 +72,7 @@ function SIgnUp() {
       toast.error("Please Enter Valid Credentials");
     }
   };
+
   useEffect(() => {
     AOS.init({ duration: 2000 });
   }, []);

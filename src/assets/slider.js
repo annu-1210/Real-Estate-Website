@@ -86,7 +86,7 @@ let data = [
   },
   {
     id: 10,
-    descriptio: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum ipsa et a ad sequi quo numquam ea, ratione voluptate ex, minima alias laborum mollitia. Totam veniam perspiciatis qui libero accusamus illum. Quis iure cupiditate a tempore aliquam vero? Sequi, quam. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum, quidem voluptatibus. A atque voluptates dignissimos culpa laborum architecto numquam fuga, qui ex! Libero sunt eius vero nemo? Provident molestias aspernatur quam corporis eius vel ut aliquid! Magnam aut harum nulla tempora saepe velit? Nemo enim ullam dolorem aperiam facilis officia, fuga consectetur iste illo quae necessitatibus, doloremque molestias vel modi.",
+    description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum ipsa et a ad sequi quo numquam ea, ratione voluptate ex, minima alias laborum mollitia. Totam veniam perspiciatis qui libero accusamus illum. Quis iure cupiditate a tempore aliquam vero? Sequi, quam. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum, quidem voluptatibus. A atque voluptates dignissimos culpa laborum architecto numquam fuga, qui ex! Libero sunt eius vero nemo? Provident molestias aspernatur quam corporis eius vel ut aliquid! Magnam aut harum nulla tempora saepe velit? Nemo enim ullam dolorem aperiam facilis officia, fuga consectetur iste illo quae necessitatibus, doloremque molestias vel modi.",
     name: "Aliva Priva Jardin",
     address: "6 Garth rd, Scarsdale, Cakung. Pulo Gadung, Jakarta Timur, Mamaroneck",
     image: p4_img,
